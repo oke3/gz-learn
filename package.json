@@ -1,0 +1,43 @@
+{
+  "name": "@oke3/opencode-learn",
+  "version": "0.1.0",
+  "description": "Skill-building curriculum for OpenCode agents — learn, practice, track progress",
+  "type": "module",
+  "bin": {
+    "opencode-learn": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "bun test",
+    "prepublishOnly": "bun run build && bun test"
+  },
+  "keywords": [
+    "opencode",
+    "learn",
+    "curriculum",
+    "skills",
+    "training",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "author": "oke3",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oke3/opencode-learn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/oke3/opencode-learn/issues"
+  },
+  "homepage": "https://github.com/oke3/opencode-learn#readme"
+}
