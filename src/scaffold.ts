@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Ground Zero LLC. All rights reserved.
+
 /**
  * Practice project scaffolding — generates a scratch OpenCode project
  * for a lesson, with an AGENTS.md and a task prompt to work on.

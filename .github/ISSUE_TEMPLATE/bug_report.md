@@ -18,7 +18,7 @@ What you expected to happen.
 **Environment**
 - OS: [e.g. macOS, Linux, Windows]
 - Node version: [e.g. 18, 20, 22]
-- opencode-learn version: [e.g. 0.1.0]
+- gz-learn version: [e.g. 0.1.0]
 
 **Additional context**
 Any other context.

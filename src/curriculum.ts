@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Ground Zero LLC. All rights reserved.
+
 /**
  * Built-in curriculum for OpenCode agent skill-building.
  * Each module is a set of lessons; each lesson has an objective,

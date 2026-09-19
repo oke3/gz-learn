@@ -1,10 +1,10 @@
 {
-  "name": "@oke3/opencode-learn",
+  "name": "@ground-zero-llc/gz-learn",
   "version": "0.1.0",
   "description": "Skill-building curriculum for OpenCode agents — learn, practice, track progress",
   "type": "module",
   "bin": {
-    "opencode-learn": "./dist/cli.js"
+    "gz-learn": "./dist/cli.js"
   },
   "files": [
     "dist",
@@ -30,14 +30,15 @@
     "@types/node": "^22.0.0",
     "typescript": "^5.6.0"
   },
-  "author": "oke3",
+  "author": "Ground Zero LLC <hello@ground-zero.dev>",
+  "publisher": "Ground Zero LLC",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oke3/opencode-learn.git"
+    "url": "git+https://github.com/oke3/gz-learn.git"
   },
   "bugs": {
-    "url": "https://github.com/oke3/opencode-learn/issues"
+    "url": "https://github.com/oke3/gz-learn/issues"
   },
-  "homepage": "https://github.com/oke3/opencode-learn#readme"
+  "homepage": "https://github.com/oke3/gz-learn#readme"
 }

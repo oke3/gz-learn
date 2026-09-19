@@ -1,4 +1,4 @@
-# Contributing to opencode-learn
+# Contributing to gz-learn
 
 Thanks for your interest in contributing!
 

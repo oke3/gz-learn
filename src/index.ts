@@ -1,9 +1,11 @@
+// Copyright (c) 2026 Ground Zero LLC. All rights reserved.
+
 /**
- * @oke3/opencode-learn — skill-building curriculum for OpenCode agents.
+ * @ground-zero-llc/gz-learn — skill-building curriculum for OpenCode agents.
  *
  * @example
  * ```typescript
- * import { CURRICULUM, getModule, ProgressStore, scaffoldPractice } from '@oke3/opencode-learn'
+ * import { CURRICULUM, getModule, ProgressStore, scaffoldPractice } from '@ground-zero-llc/gz-learn'
  *
  * const store = new ProgressStore('./data')
  * const module = getModule('skills')

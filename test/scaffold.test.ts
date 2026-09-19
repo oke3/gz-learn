@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Ground Zero LLC. All rights reserved.
+
 import { describe, it, expect, beforeEach, afterEach } from 'bun:test'
 import { scaffoldPractice } from '../src/scaffold.js'
 import { getModule } from '../src/curriculum.js'
@@ -8,7 +10,7 @@ import { tmpdir } from 'node:os'
 let dir: string
 
 beforeEach(() => {
-  dir = mkdtempSync(join(tmpdir(), 'opencode-learn-scaffold-'))
+  dir = mkdtempSync(join(tmpdir(), 'gz-learn-scaffold-'))
 })
 
 afterEach(() => {

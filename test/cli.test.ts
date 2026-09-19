@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Ground Zero LLC. All rights reserved.
+
 import { describe, it, expect, beforeEach, afterEach } from 'bun:test'
 import { execSync } from 'node:child_process'
 import { mkdtempSync, rmSync } from 'node:fs'
@@ -11,14 +13,14 @@ let dataDir: string
 
 function run(args: string): string {
   return execSync(`bun run ${CLI} ${args}`, {
-    env: { ...process.env, OPENCODE_LEARN_DATA_DIR: dataDir },
+    env: { ...process.env, GZ_LEARN_DATA_DIR: dataDir },
     encoding: 'utf-8',
     timeout: 10_000,
   }).trim()
 }
 
 beforeEach(() => {
-  dir = mkdtempSync(join(tmpdir(), 'opencode-learn-cli-'))
+  dir = mkdtempSync(join(tmpdir(), 'gz-learn-cli-'))
   dataDir = join(dir, 'data')
 })
 
@@ -29,7 +31,7 @@ afterEach(() => {
 describe('CLI', () => {
   it('shows usage with no args', () => {
     const output = run('')
-    expect(output).toContain('opencode-learn')
+    expect(output).toContain('gz-learn')
     expect(output).toContain('Usage')
   })
 

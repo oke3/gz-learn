@@ -1,5 +1,7 @@
+// Copyright (c) 2026 Ground Zero LLC. All rights reserved.
+
 /**
- * opencode-learn CLI — learn, practice, and track OpenCode agent skills.
+ * gz-learn CLI — learn, practice, and track OpenCode agent skills.
  */
 
 import { CURRICULUM, getModule, getLesson, totalLessons } from './curriculum.js'
@@ -9,20 +11,20 @@ import { join } from 'node:path'
 import { cwd } from 'node:process'
 
 function usage(): string {
-  return `opencode-learn — skill-building curriculum for OpenCode agents
+  return `gz-learn — skill-building curriculum for OpenCode agents
 
 Usage:
-  opencode-learn list                       List curriculum modules
-  opencode-learn show <module>              Show a module's lessons
-  opencode-learn start <module>             Start a module (shows first incomplete lesson)
-  opencode-learn complete <module> <lesson> Mark a lesson complete
-  opencode-learn practice <module> <lesson> [--dir PATH]  Scaffold a practice project
-  opencode-learn progress                   Show progress across all modules
-  opencode-learn status                     Alias for progress
-  opencode-learn reset                      Reset all progress
-  opencode-learn health                     Check data directory status
+  gz-learn list                       List curriculum modules
+  gz-learn show <module>              Show a module's lessons
+  gz-learn start <module>             Start a module (shows first incomplete lesson)
+  gz-learn complete <module> <lesson> Mark a lesson complete
+  gz-learn practice <module> <lesson> [--dir PATH]  Scaffold a practice project
+  gz-learn progress                   Show progress across all modules
+  gz-learn status                     Alias for progress
+  gz-learn reset                      Reset all progress
+  gz-learn health                     Check data directory status
 
-Data directory: ~/.opencode-learn (override with OPENCODE_LEARN_DATA_DIR)
+Data directory: ~/.gz-learn (override with GZ_LEARN_DATA_DIR)
 `
 }
 
@@ -69,13 +71,13 @@ async function main(): Promise<void> {
     case 'show': {
       const moduleId = args[1]
       if (!moduleId) {
-        console.error('Usage: opencode-learn show <module>')
+        console.error('Usage: gz-learn show <module>')
         process.exitCode = 1
         return
       }
       const m = getModule(moduleId)
       if (!m) {
-        console.error(`Unknown module: ${moduleId}. Run 'opencode-learn list' to see modules.`)
+        console.error(`Unknown module: ${moduleId}. Run 'gz-learn list' to see modules.`)
         process.exitCode = 1
         return
       }
@@ -88,7 +90,7 @@ async function main(): Promise<void> {
     case 'start': {
       const moduleId = args[1]
       if (!moduleId) {
-        console.error('Usage: opencode-learn start <module>')
+        console.error('Usage: gz-learn start <module>')
         process.exitCode = 1
         return
       }
@@ -105,8 +107,8 @@ async function main(): Promise<void> {
       }
       console.log(`Next lesson in '${m.id}': ${next.id} — ${next.title}`)
       console.log(`  ${next.objective}`)
-      console.log(`\nPractice: opencode-learn practice ${m.id} ${next.id}`)
-      console.log(`Complete: opencode-learn complete ${m.id} ${next.id}`)
+      console.log(`\nPractice: gz-learn practice ${m.id} ${next.id}`)
+      console.log(`Complete: gz-learn complete ${m.id} ${next.id}`)
       return
     }
 
@@ -114,7 +116,7 @@ async function main(): Promise<void> {
       const moduleId = args[1]
       const lessonId = args[2]
       if (!moduleId || !lessonId) {
-        console.error('Usage: opencode-learn complete <module> <lesson>')
+        console.error('Usage: gz-learn complete <module> <lesson>')
         process.exitCode = 1
         return
       }
@@ -137,7 +139,7 @@ async function main(): Promise<void> {
       const moduleId = args[1]
       const lessonId = args[2]
       if (!moduleId || !lessonId) {
-        console.error('Usage: opencode-learn practice <module> <lesson> [--dir PATH]')
+        console.error('Usage: gz-learn practice <module> <lesson> [--dir PATH]')
         process.exitCode = 1
         return
       }
@@ -191,7 +193,7 @@ async function main(): Promise<void> {
 
     case 'health': {
       const meta = store.getMeta()
-      const dir = process.env['OPENCODE_LEARN_DATA_DIR'] ?? join(process.env['HOME'] ?? '', '.opencode-learn')
+      const dir = process.env['GZ_LEARN_DATA_DIR'] ?? join(process.env['HOME'] ?? '', '.gz-learn')
       console.log(JSON.stringify({ status: 'ok', dataDir: dir, completed: meta.totalCompleted, practiceRuns: meta.totalPracticeRuns }, null, 2))
       return
     }

@@ -1,5 +1,7 @@
+// Copyright (c) 2026 Ground Zero LLC. All rights reserved.
+
 /**
- * JSONL-based progress storage for opencode-learn.
+ * JSONL-based progress storage for gz-learn.
  * Tracks completed lessons, practice sessions, and module status.
  */
 
@@ -33,7 +35,7 @@ export class ProgressStore {
   private metaPath: string
 
   constructor(dataDir?: string) {
-    this.dir = dataDir ?? process.env['OPENCODE_LEARN_DATA_DIR'] ?? join(homedir(), '.opencode-learn')
+    this.dir = dataDir ?? process.env['GZ_LEARN_DATA_DIR'] ?? join(homedir(), '.gz-learn')
     this.completedPath = join(this.dir, 'completed.jsonl')
     this.practicePath = join(this.dir, 'practice.jsonl')
     this.metaPath = join(this.dir, 'meta.json')

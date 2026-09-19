@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Ground Zero LLC. All rights reserved.
+
 import { describe, it, expect, beforeEach, afterEach } from 'bun:test'
 import { ProgressStore } from '../src/store.js'
 import { mkdtempSync, rmSync, existsSync } from 'node:fs'
@@ -8,7 +10,7 @@ let dir: string
 let store: ProgressStore
 
 beforeEach(() => {
-  dir = mkdtempSync(join(tmpdir(), 'opencode-learn-store-'))
+  dir = mkdtempSync(join(tmpdir(), 'gz-learn-store-'))
   store = new ProgressStore(dir)
 })
 
