@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/v/@ground-zero-llc/gz-learn)](https://www.npmjs.com/package/@ground-zero-llc/gz-learn)
 [![CI](https://github.com/oke3/gz-learn/actions/workflows/ci.yml/badge.svg)](https://github.com/oke3/gz-learn/actions)
 
-**Train your agents like you train yourself.**
+> Train your agents like you train yourself.
 
 A structured skill-building curriculum for OpenCode agents — learn, practice, and track progress. Six modules, eighteen lessons, covering the full stack of OpenCode agent development with hands-on practice projects you can scaffold and run.
 
